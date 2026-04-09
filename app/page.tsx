@@ -33,11 +33,7 @@ export default function HomePage() {
 
           <div className="relative mx-auto max-w-6xl">
             <div>
-              <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 acc-label text-[var(--color-acc-cyan-bright)] shadow-sm backdrop-blur-md">
-                <span
-                  className="size-1.5 rounded-full bg-[var(--color-acc-orange)] shadow-[0_0_10px_color-mix(in_srgb,var(--color-acc-yellow)_80%,transparent)]"
-                  aria-hidden
-                />
+              <p className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1.5 acc-label text-[var(--color-acc-cyan-bright)] shadow-sm backdrop-blur-md">
                 TMT Solutions Engineering · ACCelerants Specialist SE
               </p>
               <h1 className="mt-7 max-w-2xl text-3xl font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.625rem]">

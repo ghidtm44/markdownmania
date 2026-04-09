@@ -24,14 +24,17 @@ export function SiteHeader() {
         <div className="acc-flame-stripe" aria-hidden />
       </div>
       <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-[color-mix(in_srgb,var(--color-acc-surface)_88%,transparent)] shadow-[0_1px_0_rgba(255,255,255,0.8),0_8px_24px_-10px_color-mix(in_srgb,var(--color-acc-royal-deep)_14%,transparent)] backdrop-blur-lg backdrop-saturate-150">
-        <div className="mx-auto flex h-12 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            className="text-sm font-bold tracking-tight text-[var(--color-acc-royal-deep)] transition-colors duration-200 hover:text-[var(--color-acc-orange)]"
+        <div className="mx-auto flex h-12 max-w-6xl items-center px-4 sm:px-6 lg:px-8">
+          <nav
+            className="flex flex-wrap items-center gap-1 sm:gap-2"
+            aria-label="Primary"
           >
-            Home
-          </Link>
-          <nav className="flex items-center gap-1 sm:gap-2">
+            <Link
+              href="/"
+              className="rounded-full px-3 py-1.5 text-sm font-semibold text-slate-600 transition-colors duration-200 hover:bg-[color-mix(in_srgb,var(--color-acc-orange)_12%,white)] hover:text-[var(--color-acc-royal-deep)]"
+            >
+              Home
+            </Link>
             <Link
               href="/#about-skills"
               className="rounded-full px-3 py-1.5 text-sm font-semibold text-slate-600 transition-colors duration-200 hover:bg-[color-mix(in_srgb,var(--color-acc-cyan)_14%,white)] hover:text-[var(--color-acc-royal-deep)]"

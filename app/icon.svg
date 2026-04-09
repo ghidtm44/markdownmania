@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="Markdown Mania">
+  <defs>
+    <linearGradient id="mm-bg" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c62c2" />
+      <stop offset="1" stop-color="#063d72" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="url(#mm-bg)" />
+  <path
+    fill="#ffffff"
+    d="M8 26L8 6h4l4 8 4-8h4v20h-4V12l-4 8 -4 -8v14H8z"
+  />
+</svg>

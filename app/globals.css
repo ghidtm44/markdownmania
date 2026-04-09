@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  /* Royal / cyan tuned to match The ACCelerants logo sticker blues */
+  --color-acc-royal: #0b57ac;
+  --color-acc-royal-mid: #0c62c2;
+  --color-acc-royal-deep: #063d72;
+  --color-acc-cyan: #2eb8ef;
+  --color-acc-cyan-bright: #7fd8ff;
+  --color-acc-orange: #ff7a1a;
+  --color-acc-yellow: #ffd24a;
+  --color-acc-navy: #032d60;
+  --color-acc-page: #e7f0fa;
+  --color-acc-surface: #ffffff;
+  /* Legacy aliases */
+  --color-sf-blue: #0176d3;
+  --color-sf-blue-dark: #014486;
+  --color-sf-blue-bright: #3ec6f0;
+  --color-sf-teal: #00a1e0;
+  --color-sf-cloud: #f3f3f3;
+  --color-sf-navy: #032d60;
+  --color-sf-page: var(--color-acc-page);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-dvh bg-[var(--color-acc-page)] font-sans text-slate-800 antialiased;
+  }
+
+  ::selection {
+    @apply bg-[color-mix(in_srgb,var(--color-acc-cyan)_38%,transparent)] text-[var(--color-acc-royal-deep)];
+  }
+}
+
+@keyframes float-blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(2%, -3%) scale(1.03);
+  }
+  66% {
+    transform: translate(-2%, 2%) scale(0.98);
+  }
+}
+
+@keyframes shimmer-line {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes flame-flicker {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.animate-float-blob {
+  animation: float-blob 20s ease-in-out infinite;
+}
+
+.animate-shimmer-line {
+  animation: shimmer-line 10s linear infinite;
+}
+
+.animate-flame-accent {
+  animation: flame-flicker 6s ease-in-out infinite;
+}
+
+/* Accent bar — cyan → gold → orange, soft glow */
+.acc-flame-stripe {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-acc-cyan) 0%,
+    var(--color-acc-yellow) 42%,
+    var(--color-acc-orange) 100%
+  );
+  box-shadow: 0 1px 12px color-mix(in srgb, var(--color-acc-orange) 45%, transparent);
+}
+
+/* Section label pill */
+.acc-label {
+  @apply text-[11px] font-bold uppercase tracking-[0.16em];
+}
+
+/* Elevated surface */
+.acc-card-shadow {
+  box-shadow:
+    0 4px 6px -1px color-mix(in srgb, var(--color-acc-royal-deep) 8%, transparent),
+    0 12px 32px -8px color-mix(in srgb, var(--color-acc-royal-deep) 14%, transparent);
+}
+
+/* Feather logo edges into royal background (softens sticker outline) */
+.acc-logo-soft {
+  filter: drop-shadow(
+      0 0 14px color-mix(in srgb, var(--color-acc-royal) 72%, transparent)
+    )
+    drop-shadow(
+      0 0 36px color-mix(in srgb, var(--color-acc-royal) 38%, transparent)
+    )
+    drop-shadow(0 6px 14px rgba(0, 0, 0, 0.18));
+}
+
+/* Markdown body */
+.prose-skill {
+  @apply text-[0.9375rem] leading-relaxed text-slate-700;
+}
+
+.prose-skill :where(h1) {
+  @apply mb-4 text-2xl font-bold tracking-tight text-slate-900;
+}
+
+.prose-skill :where(h2) {
+  @apply mb-3 mt-10 border-b border-slate-200/90 pb-2 text-lg font-semibold tracking-tight text-[var(--color-acc-royal-deep)] first:mt-0;
+}
+
+.prose-skill :where(h3) {
+  @apply mb-2 mt-8 text-base font-semibold text-slate-900;
+}
+
+.prose-skill :where(p) {
+  @apply mb-4 text-slate-600;
+}
+
+.prose-skill :where(ul, ol) {
+  @apply mb-4 pl-6 text-slate-600;
+}
+
+.prose-skill :where(li) {
+  @apply mb-1.5;
+}
+
+.prose-skill :where(ul) {
+  list-style-type: disc;
+}
+
+.prose-skill :where(ol) {
+  list-style-type: decimal;
+}
+
+.prose-skill :where(a) {
+  @apply font-semibold text-[var(--color-acc-royal)] underline decoration-[var(--color-acc-cyan)]/45 underline-offset-[3px] transition duration-200 hover:text-[var(--color-acc-orange)] hover:decoration-[var(--color-acc-orange)]/60;
+}
+
+.prose-skill :where(code):not(:where(pre *)) {
+  @apply rounded-md border border-slate-200/80 bg-slate-50 px-1.5 py-0.5 font-mono text-[0.8125rem] text-slate-800;
+}
+
+.prose-skill :where(pre) {
+  @apply mb-4 overflow-x-auto rounded-xl border border-slate-200/90 bg-[#0a1628] p-4 text-[0.8125rem] text-slate-100;
+}
+
+.prose-skill :where(pre code) {
+  @apply border-0 bg-transparent p-0 text-inherit;
+}
+
+.prose-skill :where(blockquote) {
+  @apply mb-4 rounded-r-lg border-l-[3px] border-[var(--color-acc-orange)] bg-[color-mix(in_srgb,var(--color-acc-cyan)_7%,white)] py-2 pl-4 pr-3 text-slate-600 not-italic;
+}
+
+.prose-skill :where(table) {
+  @apply mb-4 w-full border-collapse overflow-hidden rounded-xl border border-slate-200/90 text-sm;
+}
+
+.prose-skill :where(th, td) {
+  @apply border border-slate-200/80 px-3 py-2.5 text-left;
+}
+
+.prose-skill :where(th) {
+  @apply bg-[color-mix(in_srgb,var(--color-acc-royal)_6%,#f8fafc)] font-semibold text-slate-800;
+}
+
+.prose-skill :where(hr) {
+  @apply my-10 border-0 border-t border-slate-200/90;
+}

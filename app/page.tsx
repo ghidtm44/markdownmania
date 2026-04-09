@@ -1,6 +1,5 @@
 import { SkillCard } from "@/components/SkillCard";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
-import { AccelerantsLogo } from "@/components/AccelerantsLogo";
 import { getAllSkills } from "@/lib/skills";
 
 export default function HomePage() {
@@ -32,7 +31,7 @@ export default function HomePage() {
             aria-hidden
           />
 
-          <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_minmax(0,300px)] lg:items-center lg:gap-14">
+          <div className="relative mx-auto max-w-6xl">
             <div>
               <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 acc-label text-[var(--color-acc-cyan-bright)] shadow-sm backdrop-blur-md">
                 <span
@@ -78,23 +77,6 @@ export default function HomePage() {
                 className="mt-12 h-1 max-w-sm rounded-full bg-[length:200%_100%] bg-gradient-to-r from-transparent via-white/35 to-transparent opacity-90 animate-shimmer-line"
                 aria-hidden
               />
-            </div>
-
-            <div className="flex justify-center overflow-visible lg:justify-end">
-              <div className="relative flex w-full max-w-[18rem] flex-col items-center px-4 py-6 sm:max-w-xs sm:px-6 sm:py-8">
-                <div
-                  className="pointer-events-none absolute inset-0 -z-10 rounded-[2rem] bg-[color-mix(in_srgb,var(--color-acc-royal)_55%,transparent)] blur-2xl"
-                  aria-hidden
-                />
-                <AccelerantsLogo
-                  priority
-                  softEdge
-                  sizeClass="relative mx-auto block h-[4.25rem] w-auto sm:h-24"
-                />
-                <p className="relative mt-6 text-center acc-label text-white/55">
-                  The ACCelerants
-                </p>
-              </div>
             </div>
           </div>
         </section>

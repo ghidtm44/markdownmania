@@ -7,10 +7,7 @@ type Props = {
   /** Tailwind height class, e.g. h-10 sm:h-12 */
   sizeClass?: string;
   priority?: boolean;
-  /**
-   * When true, adds a royal-colored glow so the PNG blends into matching blue
-   * backgrounds (reduces visible hard edges around the sticker).
-   */
+  /** When true, adds a subtle shadow so the transparent PNG reads on blue gradients. */
   softEdge?: boolean;
 };
 
